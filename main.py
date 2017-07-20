@@ -1,5 +1,5 @@
 import os
-from functions import get_files, test_walk, populate
+from functions import get_files, test_walk, populate, fix_numbers_filenames
 
 def menu():
     os.system('cls')
@@ -7,6 +7,7 @@ def menu():
     print('\t1 - Obtener nombres de archivos de un direcctorio')
     print('\t2 - Ver directorios de un Directorio')
     print('\t3 - Populate')
+    print('\t4 - Eliminar primeros numeros de los archivos en directorio')
 
 while True:
     menu()
@@ -26,4 +27,6 @@ while True:
         type = input('Ingrese tipo de archivo a crear>> ')
         cuantity = input('Ingrese cantidad de Archivos a crear >>')
         populate(dir, type, cuantity)
-        
+    if opcion == '4':
+        dir = input('Ingrese directorio>>')
+        fix_numbers_filenames(dir)
